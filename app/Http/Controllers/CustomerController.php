@@ -68,7 +68,7 @@ class CustomerController extends Controller
                     ->withErrors($validator, 'updateCusErrorBag');
             }
             $cus->update($all);
-            return view('customer.create_success', ['customer' => $cus]);
+            return view('customer.create_success', ['customer' => $cus,'activity'=>'']);
 
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
