@@ -18,7 +18,6 @@
                         <p>开始时间：{{$activity->start}}</p>
                         <p>结束时间：{{$activity->end}}</p>
                     </div>
-
                 @endif
             </div>
         </div>
