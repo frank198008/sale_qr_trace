@@ -6,7 +6,7 @@
             @foreach($activities as $activity)
                 <div class="card-header">登记二维码</div>
                 <div class="card-body">
-                    <img src="data:image/png;base64,{!!base64_encode(QrCode::format('png')->merge(public_path('img/boy.png'), 0.2, true)->errorCorrection('H')->size(200)->backgroundColor(255,55,0)->generate(URL::to('/')."/customer/create?salesman_id=$salesman_id&activity_id=$activity->id))!!}">
+                    <img src="data:image/png;base64,{!!base64_encode(QrCode::format('png')->merge(public_path('img/boy.png'), 0.2, true)->errorCorrection('H')->size(200)->backgroundColor(255,55,0)->generate(URL::to('/').'/customer/create?salesman_id='.$salesman_id.'&activity_id='.$activity->id))!!}">
                 </div>
                 <div class="card-header">活动信息</div>
                 <div class="card-body">
