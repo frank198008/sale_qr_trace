@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     {!!Form::errors("提交的数据没有通过检查")!!}
-                    {!!Form::open()->route('customer.update',$id)->errorBag("updateCusErrorBag")!!}
+                    {!!Form::open()->route('customer.update',['customer'=>$id])->errorBag("updateCusErrorBag")!!}
                     {!!Form::hidden('salesman_id',$salesman_id)!!}
                     {!!Form::hidden('activity_id',$activity_id)!!}
                     {!!Form::text('name', '姓名',$name)!!}
