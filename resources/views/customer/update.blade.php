@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Update') }}</div>
+                <div class="card-header">更新客户信息</div>
 
                 <div class="card-body">
                     {!!Form::errors("提交的数据没有通过检查")!!}
@@ -20,7 +20,7 @@
                     {!!Form::radio('sex', '女',$sex==0)!!}
                     {!!Form::radio('sex', '男',$sex==1)!!}
                     <div style="margin-top: 2rem">
-                    {!!Form::submit("提交")!!}
+                    {!!Form::submit("更新")!!}
                     {!!Form::reset("重置")->warning()!!}
                     </div>
                     {!!Form::close()!!}
