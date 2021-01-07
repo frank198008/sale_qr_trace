@@ -58,7 +58,7 @@ class CustomerController extends Controller
             $all = \request()->all();
             $validator = Validator::make($all, [
                 'name' => 'required|min:2',
-                'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:customers'
+                'phone' => 'required|regex:/^1[34578]\d{9}$/'
             ]);
 
             if ($validator->fails()) {
