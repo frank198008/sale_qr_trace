@@ -5,7 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-
                     @if($activity)
                         <div class="card-header">活动信息</div>
                         <div class="card-body">

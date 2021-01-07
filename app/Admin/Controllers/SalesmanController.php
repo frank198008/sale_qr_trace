@@ -40,7 +40,14 @@ class SalesmanController extends AdminController
         $grid->column('status', __('状态'))->using([
             0 => '离职',
             1 => '在职'
-        ]);;
+        ]);
+        $grid->column('user','注册名')->display(function ($user){
+            if($user){
+                return $user['name'];
+            }else{
+                return '未注册';
+            }
+        });
         return $grid;
     }
 

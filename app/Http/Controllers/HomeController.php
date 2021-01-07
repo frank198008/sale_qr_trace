@@ -28,21 +28,24 @@ class HomeController extends Controller
     {
         $sid = Auth::user()->salesman->id;
         $acts = Salesman::find($sid)->activities;
-        switch (count($acts)){
+        switch (count($acts)) {
             case 0:
                 return view('activity.no_activity');
             case 1:
-                $aid=$acts[0]->id;
-                $url = URL::to('/')."/customer/create?salesman_id=$sid&activity_id=$aid";
-                $image = QrCode::format('png')
-                    ->merge(public_path('img/boy.png'), 0.2, true)
-                    ->backgroundColor(255,55,0)
-                    ->margin(5)
-                    ->size(300)->errorCorrection('H')
-                    ->generate($url);
-                return response($image)->header('Content-type','image/png');
+                $act = $acts[0];
+                $url = URL::to('/') . "/customer/create?salesman_id=$sid&activity_id=$act->id";
+
+//                $image = QrCode::format('png')
+//                    ->merge(public_path('img/boy.png'), 0.2, true)
+//                    ->backgroundColor(255,55,0)
+//                    ->margin(5)
+//                    ->size(300)->errorCorrection('H')
+//                    ->generate($url);
+//                return response($image)->header('Content-type','image/png');
+                return view('home', ['url' => $url,'activity'=>$act]);
+
             default:
-                return view('activity.my_activities',['activities'=>$acts,'salesman_id'=>$sid]);
+                return view('activity.my_activities', ['activities' => $acts, 'salesman_id' => $sid]);
         }
     }
 }
