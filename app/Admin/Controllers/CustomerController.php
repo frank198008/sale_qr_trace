@@ -27,13 +27,13 @@ class CustomerController extends AdminController
         $grid = new Grid(new Customer());
 
         $grid->column('id', __('ID'));
-        $grid->column('register.name', __('登记人'));
         $grid->column('name', __('客户姓名'));
         $grid->column('phone', __('客户手机'));
         $grid->column('id_number', __('客户身份证'));
         $grid->column('occupation', __('客户职业'));
         $grid->column('sex', __('性别'));
         $grid->column('age', __('年龄'));
+        $grid->column('register.name', __('登记人'));
 //        $grid->column('status', __('状态'));
 
         return $grid;
