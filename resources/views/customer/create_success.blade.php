@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">登记信息 [<a href="{{route('customer.edit',$customer->id)}}">更新</a>]</div>
+                    <div class="card-header">登记信息 [<a href="{{route('customer.edit',['customer'=>$customer->id])}}">更新</a>]</div>
                     <div class="card-body">
                         <p>姓名：{{$customer->name}}</p>
                         <p>电话：{{$customer->phone}}</p>
