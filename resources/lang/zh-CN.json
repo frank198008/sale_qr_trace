@@ -1,0 +1,11 @@
+{
+  "Login": "登录",
+  "Name": "用户名",
+  "Register": "注册",
+  "Mobile":"手机号码",
+  "Password": "密码",
+  "Confirm Password": "重复密码",
+  "Remember Me": "记住我",
+  "Forgot Your Password?": "忘记密码？",
+  "Logout": "退出"
+}
