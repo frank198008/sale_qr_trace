@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            @foreach($activities as $activity)
+        @foreach($activities as $activity)
+            <div class="row justify-content-center">
                 <div class="card-header">登记二维码</div>
                 <div class="card-body">
                     <img src="data:image/png;base64,{!!base64_encode(QrCode::format('png')->merge(public_path('img/boy.png'), 0.2, true)->errorCorrection('H')->size(200)->backgroundColor(255,55,0)->generate(URL::to('/').'/customer/create?salesman_id='.$salesman_id.'&activity_id='.$activity->id))!!}">
@@ -16,7 +16,7 @@
                     <p>开始时间：{{$activity->start}}</p>
                     <p>结束时间：{{$activity->end}}</p>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
 @endsection
